@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="mesGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e1726"/>
+      <stop offset="50%" stop-color="#18273f"/>
+      <stop offset="100%" stop-color="#080e18"/>
+    </linearGradient>
+    <filter id="mesGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <rect width="600" height="400" fill="url(#mesGrad)"/>
+
+  <!-- Industrial Mesh / Assembly Line schematic -->
+  <g stroke="rgba(0,229,255,0.12)" stroke-width="1.5">
+    <line x1="0" y1="180" x2="600" y2="180"/>
+    <line x1="0" y1="220" x2="600" y2="220"/>
+    <!-- Conveyor rollers -->
+    <circle cx="80" cy="200" r="14" fill="#0d1b2e" stroke="#00e5ff" stroke-width="2"/>
+    <circle cx="160" cy="200" r="14" fill="#0d1b2e" stroke="#00e5ff" stroke-width="2"/>
+    <circle cx="240" cy="200" r="14" fill="#0d1b2e" stroke="#00e5ff" stroke-width="2"/>
+    <circle cx="320" cy="200" r="14" fill="#0d1b2e" stroke="#12d640" stroke-width="2"/>
+    <circle cx="400" cy="200" r="14" fill="#0d1b2e" stroke="#00e5ff" stroke-width="2"/>
+    <circle cx="480" cy="200" r="14" fill="#0d1b2e" stroke="#00e5ff" stroke-width="2"/>
+    <circle cx="560" cy="200" r="14" fill="#0d1b2e" stroke="#00e5ff" stroke-width="2"/>
+  </g>
+
+  <!-- Car Silhouette / Component on Line -->
+  <g transform="translate(240, 100)">
+    <!-- Automotive chassis -->
+    <path d="M10 55 L35 30 L85 30 L110 55 L140 55 L150 70 L0 70 Z" fill="#1e3a5f" stroke="#00e5ff" stroke-width="2"/>
+    <circle cx="30" cy="70" r="12" fill="#0b1728" stroke="#12d640" stroke-width="3"/>
+    <circle cx="120" cy="70" r="12" fill="#0b1728" stroke="#12d640" stroke-width="3"/>
+
+    <!-- Poka-Yoke & Laser Inspection Beam -->
+    <path d="M75 0 L55 55 L95 55 Z" fill="rgba(18,214,64,0.25)"/>
+    <line x1="75" y1="0" x2="75" y2="55" stroke="#12d640" stroke-width="2" filter="url(#mesGlow)"/>
+    <circle cx="75" cy="0" r="6" fill="#12d640"/>
+  </g>
+
+  <!-- PLC / Traceability Status Cards -->
+  <g transform="translate(180, 235)">
+    <rect width="240" height="45" rx="8" fill="#091829" stroke="#12d640" stroke-width="1.5"/>
+    <circle cx="25" cy="22" r="6" fill="#12d640" filter="url(#mesGlow)"/>
+    <text x="45" y="19" font-family="'Poppins', sans-serif" font-size="11" font-weight="700" fill="#ffffff">PLC ROUTING INTERLOCKS</text>
+    <text x="45" y="34" font-family="'Poppins', sans-serif" font-size="9" fill="#00e5ff">TORQUE &amp; PRESS VALIDATION: PASS</text>
+  </g>
+
+  <!-- Metric Badges -->
+  <g transform="translate(45, 320)">
+    <rect width="150" height="36" rx="8" fill="rgba(255,255,255,0.06)" stroke="rgba(0,229,255,0.3)"/>
+    <text x="75" y="23" font-family="'Poppins', sans-serif" font-size="12" font-weight="600" fill="#00e5ff" text-anchor="middle">ISA-95 MES PLATFORM</text>
+  </g>
+
+  <g transform="translate(225, 320)">
+    <rect width="150" height="36" rx="8" fill="rgba(255,255,255,0.06)" stroke="rgba(18,214,64,0.3)"/>
+    <text x="75" y="23" font-family="'Poppins', sans-serif" font-size="12" font-weight="600" fill="#12d640" text-anchor="middle">POKA-YOKE CHECKS</text>
+  </g>
+
+  <g transform="translate(405, 320)">
+    <rect width="150" height="36" rx="8" fill="rgba(255,255,255,0.06)" stroke="rgba(255,183,3,0.3)"/>
+    <text x="75" y="23" font-family="'Poppins', sans-serif" font-size="12" font-weight="600" fill="#ffb703" text-anchor="middle">FASTAPI &amp; REACT</text>
+  </g>
+</svg>

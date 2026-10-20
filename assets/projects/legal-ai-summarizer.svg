@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="legalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#120c24"/>
+      <stop offset="50%" stop-color="#1f143d"/>
+      <stop offset="100%" stop-color="#0a0614"/>
+    </linearGradient>
+    <filter id="legalGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <rect width="600" height="400" fill="url(#legalGrad)"/>
+
+  <!-- AI Neural Network Nodes in Background -->
+  <g stroke="rgba(168,85,247,0.18)" stroke-width="1">
+    <line x1="120" y1="100" x2="200" y2="70"/>
+    <line x1="200" y1="70" x2="300" y2="110"/>
+    <line x1="300" y1="110" x2="400" y2="80"/>
+    <line x1="400" y1="80" x2="480" y2="120"/>
+    <line x1="150" y1="180" x2="240" y2="210"/>
+    <line x1="240" y1="210" x2="350" y2="190"/>
+    <line x1="350" y1="190" x2="450" y2="220"/>
+  </g>
+
+  <!-- Legal Scales + Neural Document Icon -->
+  <g transform="translate(180, 50)">
+    <!-- Central Scales of Justice Pillar -->
+    <rect x="116" y="50" width="8" height="150" rx="4" fill="#a855f7"/>
+    <rect x="100" y="195" width="40" height="12" rx="4" fill="#7c3aed"/>
+    <!-- Beam -->
+    <line x1="40" y1="70" x2="200" y2="70" stroke="#c084fc" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="120" cy="70" r="8" fill="#ffffff" filter="url(#legalGlow)"/>
+
+    <!-- Left Plate (Legal Documents) -->
+    <line x1="40" y1="70" x2="25" y2="120" stroke="rgba(192,132,252,0.6)" stroke-width="2"/>
+    <line x1="40" y1="70" x2="55" y2="120" stroke="rgba(192,132,252,0.6)" stroke-width="2"/>
+    <path d="M15 120 Q 40 135 65 120 Z" fill="#9333ea" stroke="#c084fc" stroke-width="2"/>
+    <!-- Document Stack -->
+    <rect x="25" y="105" width="30" height="15" rx="2" fill="#ffffff" opacity="0.85"/>
+    <rect x="28" y="100" width="24" height="6" rx="1" fill="#7c3aed"/>
+
+    <!-- Right Plate (AI Brain / Summary Output) -->
+    <line x1="200" y1="70" x2="185" y2="120" stroke="rgba(192,132,252,0.6)" stroke-width="2"/>
+    <line x1="200" y1="70" x2="215" y2="120" stroke="rgba(192,132,252,0.6)" stroke-width="2"/>
+    <path d="M175 120 Q 200 135 225 120 Z" fill="#9333ea" stroke="#c084fc" stroke-width="2"/>
+    <!-- Sparkle / AI node -->
+    <circle cx="200" cy="110" r="10" fill="#12d640" filter="url(#legalGlow)"/>
+    <path d="M200 102 L200 118 M192 110 L208 110" stroke="#ffffff" stroke-width="2"/>
+  </g>
+
+  <!-- Citation Verified Badge -->
+  <g transform="translate(230, 260)">
+    <rect width="140" height="30" rx="15" fill="#1e123a" stroke="#12d640" stroke-width="1.5"/>
+    <circle cx="245" cy="275" r="5" fill="#12d640"/>
+    <text x="305" y="279" font-family="'Poppins', sans-serif" font-size="11" font-weight="600" fill="#ffffff" text-anchor="middle">94% CITATION ACC</text>
+  </g>
+
+  <!-- Metric Badges -->
+  <g transform="translate(45, 320)">
+    <rect width="150" height="36" rx="8" fill="rgba(255,255,255,0.06)" stroke="rgba(168,85,247,0.4)"/>
+    <text x="75" y="23" font-family="'Poppins', sans-serif" font-size="12" font-weight="600" fill="#c084fc" text-anchor="middle">26,472 LEGAL DOCS</text>
+  </g>
+
+  <g transform="translate(225, 320)">
+    <rect width="150" height="36" rx="8" fill="rgba(255,255,255,0.06)" stroke="rgba(18,214,64,0.3)"/>
+    <text x="75" y="23" font-family="'Poppins', sans-serif" font-size="12" font-weight="600" fill="#12d640" text-anchor="middle">RAG &amp; LLAMA 3.2</text>
+  </g>
+
+  <g transform="translate(405, 320)">
+    <rect width="150" height="36" rx="8" fill="rgba(255,255,255,0.06)" stroke="rgba(0,229,255,0.3)"/>
+    <text x="75" y="23" font-family="'Poppins', sans-serif" font-size="12" font-weight="600" fill="#00e5ff" text-anchor="middle">IEEE ISICVA '26</text>
+  </g>
+</svg>
