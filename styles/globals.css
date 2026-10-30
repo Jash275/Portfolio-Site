@@ -1,0 +1,622 @@
+@import "./prism.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+  background-image: url("/images/noise.png");
+  background-size: 200px 200px;
+  background-position: 0 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .path { animation: none; stroke-dasharray: none; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; }
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--incognito), "Inter", sans-serif;
+}
+
+.path {
+  stroke-dasharray: 500px 100px;
+  animation: animate 100s linear infinite alternate-reverse;
+}
+
+@keyframes animate {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: 12433.8193359375;
+  }
+}
+
+:root {
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 160ms;
+  --dur-hero: 200ms;
+  --dur-base: 250ms;
+  --dur-slow: 400ms;
+}
+
+/* Light palette only. Dark mode continues to use its existing Tailwind colors. */
+html:not(.dark) {
+  color-scheme: light;
+  --light-accent-text: #047857;
+  --light-accent-ui: #059669;
+  --light-accent-hover: #065f46;
+  --light-text-primary: #27272a;
+  --light-text-secondary: #52525b;
+  --light-border: #8f8f99;
+  --light-border-soft: #d4d4d8;
+  --light-surface: #ffffff;
+  --light-surface-muted: #fafafa;
+  --light-surface-chip: #f4f4f5;
+  --light-shadow: 0 3px 12px rgba(24, 24, 27, 0.08);
+  --light-noise-wash: rgba(255, 255, 255, 0.94);
+  --light-code-background: #f4f4f5;
+  --light-code-foreground: #27272a;
+  --light-code-selection: #d1fae5;
+  --light-code-muted: #52525b;
+  --light-code-blue: #1d4ed8;
+  --light-code-green: #047857;
+  --light-code-red: #9f1239;
+  --light-code-amber: #854d0e;
+  --light-code-purple: #6d28d9;
+  --light-code-operator: #854d0e;
+  --lang-color: var(--light-code-foreground);
+  --lang-background: var(--light-code-background);
+  --text-shadow: transparent;
+  --selection-shade: var(--light-code-selection);
+  --accent-1: var(--light-code-blue);
+  --accent-2: var(--light-code-green);
+  --accent-3: var(--light-code-red);
+  --accent-4: var(--light-code-amber);
+  --hue-1: transparent;
+  --hue-2: var(--light-code-muted);
+  --hue-3: var(--light-code-purple);
+}
+
+html:not(.dark) body {
+  color: var(--light-text-primary);
+  background-color: var(--light-surface);
+  background-image: linear-gradient(var(--light-noise-wash), var(--light-noise-wash)), url("/images/noise.png");
+}
+
+html:not(.dark) .text-primary-color,
+html:not(.dark) .text-secondary-color {
+  color: var(--light-accent-text) !important;
+}
+
+html:not(.dark) .bg-primary-color,
+html:not(.dark) .fill-primary-color {
+  background-color: var(--light-accent-ui) !important;
+  fill: var(--light-accent-ui) !important;
+}
+
+html:not(.dark) .border-primary-color,
+html:not(.dark) .decoration-primary-color {
+  border-color: var(--light-accent-ui) !important;
+  text-decoration-color: var(--light-accent-ui) !important;
+}
+
+html:not(.dark) .text-zinc-400,
+html:not(.dark) .text-zinc-500 {
+  color: var(--light-text-secondary) !important;
+}
+
+html:not(.dark) .text-zinc-300 {
+  color: var(--light-text-secondary) !important;
+}
+
+html:not(.dark) .border-zinc-100,
+html:not(.dark) .border-zinc-200,
+html:not(.dark) .border-b-zinc-200,
+html:not(.dark) .border-t-zinc-100 {
+  border-color: var(--light-border) !important;
+}
+
+html:not(.dark) a:not(.project-card):hover {
+  color: var(--light-accent-hover);
+}
+
+html:not(.dark) :focus-visible {
+  outline-color: var(--light-accent-text) !important;
+}
+
+html:not(.dark) button:focus-visible,
+html:not(.dark) a:focus-visible,
+html:not(.dark) input:focus-visible,
+html:not(.dark) textarea:focus-visible,
+html:not(.dark) select:focus-visible {
+  outline: 2px solid var(--light-accent-text);
+  outline-offset: 2px;
+}
+
+html:not(.dark) ::selection {
+  color: var(--light-text-primary);
+  background: var(--light-code-selection);
+}
+
+html:not(.dark) hr {
+  border-color: var(--light-border);
+}
+
+html:not(.dark) blockquote {
+  color: var(--light-text-secondary);
+  border-left-color: var(--light-accent-ui);
+  background-color: var(--light-surface-chip);
+}
+
+html:not(.dark) input,
+html:not(.dark) textarea,
+html:not(.dark) select {
+  color: var(--light-text-primary);
+  background-color: var(--light-surface);
+  border-color: var(--light-border);
+}
+
+html:not(.dark) input::placeholder,
+html:not(.dark) textarea::placeholder {
+  color: var(--light-text-secondary);
+  opacity: 1;
+}
+
+html:not(.dark) ::-webkit-scrollbar-track {
+  background: var(--light-surface-chip);
+}
+
+html:not(.dark) ::-webkit-scrollbar-thumb {
+  background: var(--light-border);
+  border: 2px solid var(--light-surface-chip);
+  border-radius: 999px;
+}
+
+html:not(.dark) .site-header {
+  background-color: var(--light-surface);
+  border-color: var(--light-border-soft);
+}
+
+html:not(.dark) .light-active-nav[aria-current="page"] {
+  color: var(--light-accent-text) !important;
+  text-decoration: underline;
+  text-decoration-color: var(--light-accent-ui);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 6px;
+}
+
+html:not(.dark) .light-active-nav:hover,
+html:not(.dark) .mobile-nav-link:hover {
+  color: var(--light-accent-hover) !important;
+}
+
+html:not(.dark) .mobile-nav-link {
+  box-shadow: 0 1px 0 var(--light-border-soft);
+}
+
+html:not(.dark) .mobile-nav-link[aria-current="page"] {
+  color: var(--light-accent-text) !important;
+  text-decoration: underline;
+  text-decoration-color: var(--light-accent-ui);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 5px;
+}
+
+html:not(.dark) .theme-toggle,
+html:not(.dark) .mobile-menu-toggle {
+  color: var(--light-accent-text);
+  background-color: var(--light-surface-chip);
+  border-color: var(--light-border);
+}
+
+html:not(.dark) .profile-photo {
+  outline: 1px solid var(--light-border);
+  outline-offset: 1px;
+  box-shadow: var(--light-shadow);
+}
+
+html:not(.dark) .typing-role-accent {
+  color: var(--light-accent-text) !important;
+  text-decoration-color: var(--light-accent-ui) !important;
+}
+
+html:not(.dark) .typing-role-cursor {
+  background-color: var(--light-accent-ui) !important;
+}
+
+html:not(.dark) .hero-cubes [stroke="url(#paint-linear)"] {
+  stroke: var(--light-accent-ui) !important;
+  stroke-opacity: 0.82 !important;
+  stroke-width: 2.2 !important;
+}
+
+html:not(.dark) .hero-cubes path[fill="#27B173"],
+html:not(.dark) .hero-cubes path[fill="#27b173"] {
+  fill: var(--light-accent-ui) !important;
+}
+
+html:not(.dark) .hero-cubes linearGradient stop {
+  stop-color: var(--light-accent-ui) !important;
+  stop-opacity: 1 !important;
+}
+
+html:not(.dark) .education-row,
+html:not(.dark) .experience-row {
+  border-bottom: 1px solid var(--light-border-soft);
+}
+
+html:not(.dark) .education-logo-tile,
+html:not(.dark) .experience-logo-tile {
+  background-color: var(--light-surface) !important;
+  border-color: var(--light-border) !important;
+}
+
+html:not(.dark) .trinity-logo-tile {
+  background-color: #27272a !important;
+  border-color: var(--light-border) !important;
+}
+
+html:not(.dark) .project-card {
+  background-color: var(--light-surface) !important;
+  border-color: var(--light-border) !important;
+  box-shadow: var(--light-shadow);
+}
+
+html:not(.dark) .project-card:hover {
+  background-color: var(--light-surface-muted) !important;
+  border-color: var(--light-accent-ui) !important;
+  box-shadow: 0 5px 16px rgba(24, 24, 27, 0.12);
+}
+
+html:not(.dark) .project-icon-tile {
+  background-color: var(--light-surface-chip) !important;
+  box-shadow: inset 0 0 0 1px var(--light-border);
+}
+
+html:not(.dark) .project-cover {
+  background-color: var(--light-surface-muted) !important;
+  border-color: var(--light-border) !important;
+}
+
+html:not(.dark) .project-cover-art {
+  color: var(--light-accent-ui) !important;
+}
+
+html:not(.dark) .project-cover-art path {
+  stroke-opacity: 0.42 !important;
+  stroke-width: 2.2 !important;
+}
+
+html:not(.dark) .project-tag,
+html:not(.dark) .skill-badge {
+  color: var(--light-text-primary) !important;
+  background-color: var(--light-surface-chip) !important;
+  box-shadow: inset 0 0 0 1px var(--light-border);
+}
+
+html:not(.dark) .skill-group {
+  background-color: var(--light-surface) !important;
+  border-color: var(--light-border) !important;
+  box-shadow: var(--light-shadow);
+}
+
+html:not(.dark) .skill-group:hover {
+  border-color: var(--light-accent-ui) !important;
+}
+
+html:not(.dark) .github-action,
+html:not(.dark) .project-external-link,
+html:not(.dark) .resume-action {
+  color: var(--light-text-primary) !important;
+  background-color: var(--light-surface-muted) !important;
+  border-color: var(--light-border) !important;
+  box-shadow: var(--light-shadow);
+}
+
+html:not(.dark) .github-action:hover,
+html:not(.dark) .project-external-link:hover,
+html:not(.dark) .resume-action:hover {
+  color: var(--light-accent-hover) !important;
+  background-color: var(--light-surface-chip) !important;
+  border-color: var(--light-accent-ui) !important;
+}
+
+html:not(.dark) .project-external-link {
+  color: var(--light-accent-text) !important;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+html:not(.dark) .project-gallery-item {
+  background-color: var(--light-surface);
+  border-color: var(--light-border) !important;
+}
+
+html:not(.dark) .resume-viewer {
+  border-color: var(--light-border) !important;
+  box-shadow: var(--light-shadow);
+  background-color: var(--light-surface);
+}
+
+html:not(.dark) .resume-fallback {
+  border-color: var(--light-border) !important;
+  background-color: var(--light-surface-muted) !important;
+  box-shadow: var(--light-shadow);
+}
+
+html:not(.dark) .social-link {
+  color: var(--light-text-primary);
+  border-color: var(--light-border) !important;
+  text-decoration-color: var(--light-border);
+}
+
+html:not(.dark) .social-link:hover,
+html:not(.dark) .social-link:hover svg {
+  color: var(--light-accent-hover) !important;
+  border-color: var(--light-accent-ui) !important;
+}
+
+html:not(.dark) .footer-link {
+  color: var(--light-text-primary) !important;
+}
+
+html:not(.dark) .footer-link:hover {
+  color: var(--light-accent-hover) !important;
+}
+
+html:not(.dark) .site-footer {
+  border-color: var(--light-border-soft) !important;
+}
+
+html:not(.dark) .codeblock-panel {
+  color: var(--light-code-foreground);
+  box-shadow: var(--light-shadow);
+}
+
+html:not(.dark) .codeblock-header {
+  color: var(--light-code-foreground);
+  background-color: var(--light-code-background) !important;
+  border-color: var(--light-border) !important;
+}
+
+html:not(.dark) pre[class*="language-"],
+html:not(.dark) code[class*="language-"],
+html:not(.dark) .codeblock-panel pre {
+  color: var(--light-code-foreground) !important;
+  background-color: var(--light-code-background) !important;
+  text-shadow: none !important;
+}
+
+html:not(.dark) .codeblock-panel {
+  --lang-color: var(--light-code-foreground);
+  --lang-background: var(--light-code-background);
+  --text-shadow: transparent;
+  --hue-2: var(--light-code-muted);
+  --accent-1: var(--light-code-blue);
+  --accent-2: var(--light-code-green);
+  --accent-3: var(--light-code-red);
+  --accent-4: var(--light-code-amber);
+  --hue-3: var(--light-code-purple);
+}
+
+html:not(.dark) .codeblock-panel .token.operator,
+html:not(.dark) .codeblock-panel .token.entity,
+html:not(.dark) .codeblock-panel .language-css .token.string,
+html:not(.dark) .codeblock-panel .style .token.string {
+  color: var(--light-code-operator) !important;
+}
+
+html:not(.dark) .code-copy-button {
+  color: var(--light-accent-text);
+  border-radius: 4px;
+}
+
+html:not(.dark) .code-copy-button:hover {
+  color: var(--light-accent-hover);
+  background-color: var(--light-border-soft);
+}
+
+html:not(.dark) .empty-state {
+  color: var(--light-text-primary);
+  background-color: var(--light-surface-muted) !important;
+  border-color: var(--light-border) !important;
+}
+
+/* Reserve the underline position in both themes so active state changes do not shift text. */
+.light-active-nav,
+.mobile-nav-link {
+  text-decoration-line: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 1px;
+  transition: color var(--dur-fast) var(--ease-out), text-decoration-color var(--dur-base) var(--ease-out);
+}
+
+.light-active-nav {
+  text-underline-offset: 6px;
+}
+
+.mobile-nav-link {
+  text-underline-offset: 5px;
+}
+
+html.dark .light-active-nav[aria-current="page"],
+html.dark .mobile-nav-link[aria-current="page"] {
+  color: #33e092 !important;
+  text-decoration-color: #33e092;
+}
+
+html.dark .light-active-nav:hover,
+html.dark .mobile-nav-link:hover {
+  color: #33e092 !important;
+}
+
+/* Shared page-load and scroll reveal. The server-rendered state stays visible without JavaScript. */
+.reveal {
+  --reveal-delay: 0ms;
+}
+
+.reveal.is-reveal-pending {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+.reveal.is-revealing {
+  animation: reveal-up var(--dur-slow) var(--ease-out) var(--reveal-delay) both;
+}
+
+.reveal--load.is-revealing {
+  animation-duration: var(--dur-hero);
+}
+
+@keyframes reveal-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Set after hydration so theme colors never transition during first paint. */
+html.motion-ready body,
+html.motion-ready body *:not(.path) {
+  transition-property: color, background-color, border-color, text-decoration-color, transform, opacity;
+  transition-duration: var(--dur-fast);
+  transition-timing-function: var(--ease-out);
+}
+
+html.motion-ready body {
+  transition-duration: var(--dur-base);
+}
+
+html.motion-ready .theme-toggle,
+html.motion-ready .mobile-menu-panel,
+html.motion-ready .project-card,
+html.motion-ready .education-row,
+html.motion-ready .experience-row,
+html.motion-ready .skill-group,
+html.motion-ready .skill-badge,
+html.motion-ready .project-icon-tile,
+html.motion-ready .resume-action,
+html.motion-ready .github-action,
+html.motion-ready .project-external-link,
+html.motion-ready .social-link {
+  transition-duration: var(--dur-base);
+}
+
+html.motion-ready .project-card:hover,
+html.motion-ready .education-row:hover,
+html.motion-ready .experience-row:hover,
+html.motion-ready .skill-group:hover {
+  transform: translateY(-2px);
+}
+
+html.motion-ready .project-card:hover .project-icon-tile {
+  transform: scale(1.03);
+}
+
+html.motion-ready .skill-badge:hover,
+html.motion-ready .project-tag:hover {
+  color: var(--light-accent-hover);
+  box-shadow: inset 0 0 0 1px var(--light-accent-ui);
+}
+
+html.dark.motion-ready .skill-badge:hover,
+html.dark.motion-ready .project-tag:hover {
+  color: #33e092;
+  box-shadow: inset 0 0 0 1px #33e092;
+}
+
+html:not(.dark).motion-ready .education-row:hover,
+html:not(.dark).motion-ready .experience-row:hover {
+  box-shadow: var(--light-shadow);
+}
+
+html.dark.motion-ready .education-row:hover,
+html.dark.motion-ready .experience-row:hover {
+  border-bottom-color: #33e092;
+}
+
+html.motion-ready .social-link {
+  position: relative;
+}
+
+html.motion-ready .social-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 1px;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--dur-base) var(--ease-out);
+}
+
+html.motion-ready .social-link:hover::after,
+html.motion-ready .social-link:focus-visible::after {
+  transform: scaleX(1);
+}
+
+html.motion-ready button:active,
+html.motion-ready .github-action:active,
+html.motion-ready .project-external-link:active,
+html.motion-ready .resume-action:active {
+  transform: scale(0.98);
+}
+
+html.motion-ready .theme-toggle {
+  transition-duration: var(--dur-base);
+}
+
+html.motion-ready .mobile-menu-panel {
+  transition: opacity var(--dur-base) var(--ease-out), transform var(--dur-base) var(--ease-out), visibility 0s linear var(--dur-base);
+}
+
+html.motion-ready .mobile-menu-panel.mobile-menu-open {
+  transition-delay: 0s;
+}
+
+.mobile-menu-closed {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-6px);
+}
+
+.mobile-menu-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal.is-reveal-pending,
+  .reveal.is-revealing {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  html.motion-ready body,
+  html.motion-ready body *:not(.path) {
+    transition-duration: 0ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  html.motion-ready .mobile-menu-panel,
+  html.motion-ready .mobile-menu-panel.mobile-menu-open {
+    transition-duration: 0ms;
+    transition-delay: 0s;
+  }
+}

@@ -1,43 +1,35 @@
-# Operating System Files
+# Dependencies and package-manager artifacts
+/node_modules/
+/.pnp
+.pnp.*
+
+# Next.js output
+/.next/
+/out/
+/build/
+/coverage/
+
+# Local editor, deployment, and audit files
+/.vscode/
+/.idea/
+/.fleet/
+/.vercel/
+/qa/
+/asserts/
+/local-backups/
+/backups/
+/*-backup-*/
+*.log
+*.tsbuildinfo
 .DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
 Thumbs.db
-desktop.ini
 
-# Editor & IDE Directories
-.vscode/
-.idea/
-*.sublime-project
-*.sublime-workspace
-*.swp
-*.swo
-*~
+# Environment and signing secrets; keep only the documented template
+.env*
+!.env.example
+*.pem
 
-# Dependencies & Build Artefacts (if ever added)
-node_modules/
-package-lock.json
+# Debug logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
-# Environment Variables & Secrets
-.env
-.env.local
-.env.*.local
-*.env
-
-# Deployment / Vercel
-.vercel
-.output
-dist/
-build/
-
-# Temporary / Scratch Files
-*.bak
-*.old
-*.tmp
-*.log
