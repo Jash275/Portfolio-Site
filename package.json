@@ -18,7 +18,7 @@
     "refractor": "3.6.0"
   },
   "devDependencies": {
-    "@types/node": "22.13.10",
+    "@types/node": "26.6.5",
     "@types/react": "19.3.0",
     "@types/react-dom": "19.3.0",
     "@types/refractor": "^3.0.2",
