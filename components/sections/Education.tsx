@@ -11,7 +11,7 @@ export default function Education() {
             <Slide key={item.id} delay={(index % 2) * 0.06}>
             <div className="education-row min-w-0 flex items-start gap-x-4 max-w-2xl">
               <div className="education-logo-tile grid place-items-center dark:bg-primary-bg bg-secondary-bg border dark:border-zinc-800 border-zinc-200 min-h-[80px] min-w-[80px] p-2 rounded-md overflow-hidden">
-                <Image src={item.logo} className="object-contain duration-300" alt={`${item.institution} logo`} width={56} height={56} unoptimized />
+                <Image src={item.logo} className="object-contain duration-300" alt={`${item.institution} logo`} width={56} height={56} />
               </div>
               <div className="min-w-0 flex flex-col items-start break-words">
                 <h3 className="text-xl font-semibold break-words">{item.institution}</h3>

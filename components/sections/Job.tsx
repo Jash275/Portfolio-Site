@@ -11,7 +11,7 @@ export default function Job() {
             <Slide key={job.id} delay={(index % 2) * 0.06}>
             <div className="experience-row min-w-0 flex items-start gap-x-4 max-w-2xl relative">
               <div className={`experience-logo-tile ${job.logo.includes("djsce-trinity") ? "trinity-logo-tile" : ""} grid place-items-center ${job.isWhiteBgLogo ? "bg-white" : "dark:bg-primary-bg bg-secondary-bg"} border dark:border-zinc-800 border-zinc-200 min-h-[80px] min-w-[80px] p-2 rounded-md overflow-clip relative`}>
-                <Image src={job.logo} className="object-contain duration-300" alt={`${job.company} logo`} width={56} height={56} unoptimized />
+                <Image src={job.logo} className="object-contain duration-300" alt={`${job.company} logo`} width={56} height={56} />
               </div>
               <div className="min-w-0 flex flex-col items-start break-words">
                 <h3 className="text-xl font-semibold break-words">{job.company}</h3>
