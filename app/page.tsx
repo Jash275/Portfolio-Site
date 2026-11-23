@@ -74,8 +74,8 @@ export default function Home() {
           </Slide>
         </div>
 
-        {/* High-signal featured architecture & verification card */}
-        <div className="w-full xl:max-w-[460px] max-w-xl min-w-0">
+        {/* High-signal featured ISICVA'26 publication card */}
+        <div className="w-full xl:max-w-[420px] max-w-xl min-w-0 xl:self-center">
           <Slide trigger="load" delay={0.1}>
             <HeroSvg />
           </Slide>

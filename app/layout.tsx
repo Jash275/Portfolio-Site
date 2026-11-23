@@ -6,6 +6,7 @@ import { gitlabmono } from "@/styles/fonts/font";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { Providers } from "@/components/layout/Providers";
+import BackgroundAnimation from "@/components/shared/BackgroundAnimation";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -54,6 +55,7 @@ export default function RootLayout({
         className={`${incognito.variable} ${inter.className} ${gitlabmono.variable} dark:bg-zinc-900 bg-white dark:text-white text-zinc-700`}
       >
         <Providers>
+          <BackgroundAnimation />
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([
             { "@context": "https://schema.org", "@type": "Person", name: "Jash Jivani", url: "https://jashjivani.dev", image: "https://jashjivani.dev/opengraph-image.png", sameAs: ["https://github.com/Jash275", "https://www.linkedin.com/in/jash-jivani-b7b3432b0/"] },
             { "@context": "https://schema.org", "@type": "WebSite", name: "Jash Jivani", url: "https://jashjivani.dev" }

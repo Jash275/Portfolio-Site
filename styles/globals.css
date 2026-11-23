@@ -30,6 +30,27 @@ h4 {
   font-family: var(--incognito), "Inter", sans-serif;
 }
 
+.background-mesh-path {
+  stroke-dasharray: 450px 120px;
+  animation: bg-mesh-animate 90s linear infinite alternate-reverse;
+}
+
+@keyframes bg-mesh-animate {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: 12433.8;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .background-mesh-path {
+    animation: none !important;
+    stroke-dasharray: none !important;
+  }
+}
+
 :root {
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --dur-fast: 160ms;
