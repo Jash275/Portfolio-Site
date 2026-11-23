@@ -13,7 +13,7 @@ export default function BackgroundAnimation() {
         viewBox="0 0 1273 906"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="absolute -top-12 right-0 w-full max-w-[850px] h-auto opacity-20 dark:opacity-25 transition-opacity duration-700"
+        className="absolute -top-12 right-0 w-[520px] sm:w-[720px] lg:w-[850px] max-w-none h-auto opacity-15 sm:opacity-20 dark:opacity-20 dark:sm:opacity-25 transition-opacity duration-700 pointer-events-none select-none"
       >
         <g>
           <path

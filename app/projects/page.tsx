@@ -15,9 +15,9 @@ export const metadata: Metadata = {
 
 export default function ProjectsPage() {
   return (
-    <main className="max-w-7xl mx-auto md:px-16 px-6">
+    <main className="max-w-7xl mx-auto md:px-16 px-4 sm:px-6">
       <PageHeading title="Projects" description="Selected projects across audit analytics, Generative AI, data quality and software engineering." />
-      <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 mb-12">
+      <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-5 mb-12">
         {projects.map((project, index) => (
           <Slide key={project.slug} delay={(index % 3) * 0.06}>
             <Link

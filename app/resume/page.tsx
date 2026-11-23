@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function Resume() {
   return (
-    <main className="max-w-7xl mx-auto md:px-16 px-6">
+    <main className="max-w-7xl mx-auto md:px-16 px-4 sm:px-6">
       <PageHeading title="Resume" description="View or download my resume." />
       <Slide trigger="load" delay={0.1}>
         <div className="flex flex-col sm:flex-row flex-wrap gap-3 mb-6">

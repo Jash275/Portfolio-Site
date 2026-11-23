@@ -27,7 +27,7 @@ export default function Navbar() {
   ];
 
   return (
-      <header className="site-header text-sm py-6 md:px-16 px-6 border-b dark:border-zinc-800 border-zinc-200 z-30 md:mb-28 mb-10">
+      <header className="site-header text-sm py-4 md:py-6 md:px-16 px-4 sm:px-6 border-b dark:border-zinc-800 border-zinc-200 z-30 md:mb-20 mb-8">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
           <Link href="/">
             <Logo className="h-[35px] w-[35px] text-primary-color" />

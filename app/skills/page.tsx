@@ -13,12 +13,12 @@ export const metadata: Metadata = {
 
 export default function Skills() {
   return (
-    <main className="max-w-7xl mx-auto md:px-16 px-6">
+    <main className="max-w-7xl mx-auto md:px-16 px-4 sm:px-6">
       <PageHeading
         title="Skills"
         description="Technical domains, tools, and platforms I work with."
       />
-      <div className="grid md:grid-cols-2 grid-cols-1 gap-6 mb-12">
+      <div className="grid md:grid-cols-2 grid-cols-1 gap-4 sm:gap-6 mb-12">
         {skillGroups.map((group, index) => (
           <Slide key={group.name} delay={(index % 2) * 0.06}>
             <section className="skill-group dark:bg-zinc-900/80 bg-white border dark:border-zinc-800 border-zinc-200/90 dark:hover:border-zinc-700 hover:border-zinc-300 p-6 rounded-xl shadow-sm transition-all">

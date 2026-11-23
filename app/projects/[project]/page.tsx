@@ -21,12 +21,12 @@ export default async function Project({ params }: Props) {
   const { project: slug } = await params;
   const project = projects.find(({ slug: projectSlug }) => projectSlug === slug);
   if (!project) notFound();
-  return <main className="max-w-6xl mx-auto lg:px-16 px-6 min-w-0">
+  return <main className="max-w-6xl mx-auto lg:px-16 px-4 sm:px-6 min-w-0">
     <div className="max-w-3xl mx-auto min-w-0">
       <Slide trigger="load">
-      <div className="flex items-start justify-between flex-wrap mb-4 gap-4">
+      <div className="flex sm:flex-row flex-col sm:items-start items-stretch justify-between mb-4 gap-4">
         <h1 className="font-incognito font-black tracking-tight sm:text-5xl text-3xl mb-2 max-w-md break-words">{project.name}</h1>
-        <a href={project.repository} rel="noreferrer noopener" target="_blank" className="github-action min-h-11 flex items-center gap-x-2 dark:bg-primary-bg bg-secondary-bg dark:text-white text-zinc-700 border border-transparent rounded-md px-4 py-2 duration-200 hover:dark:border-zinc-700 hover:border-zinc-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary-color"><BiLogoGithub aria-hidden="true" />View on GitHub</a>
+        <a href={project.repository} rel="noreferrer noopener" target="_blank" className="github-action min-h-11 inline-flex items-center justify-center gap-x-2 dark:bg-primary-bg bg-secondary-bg dark:text-white text-zinc-700 border border-transparent rounded-md px-4 py-2 duration-200 hover:dark:border-zinc-700 hover:border-zinc-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary-color"><BiLogoGithub aria-hidden="true" />View on GitHub</a>
       </div>
       </Slide>
       <Slide trigger="load" delay={0.07}><ProjectCover title={project.name} category={project.category} icon={project.icon} /></Slide>

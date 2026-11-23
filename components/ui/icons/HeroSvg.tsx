@@ -3,7 +3,7 @@ import { BiCheckCircle, BiGitBranch } from "react-icons/bi";
 
 export default function HeroSvg() {
   return (
-    <div className="hero-feature-card w-full rounded-2xl border dark:border-zinc-800 border-zinc-200/90 dark:bg-zinc-900/90 bg-white p-6 shadow-sm dark:shadow-zinc-950/40 relative overflow-hidden backdrop-blur-sm transition-all duration-300 hover:border-emerald-500/40 hover:shadow-md">
+    <div className="hero-feature-card w-full rounded-2xl border dark:border-zinc-800 border-zinc-200/90 dark:bg-zinc-900/90 bg-white p-5 sm:p-6 shadow-sm dark:shadow-zinc-950/40 relative overflow-hidden backdrop-blur-sm transition-all duration-300 hover:border-emerald-500/40 hover:shadow-md">
       {/* Subtle top accent gradient */}
       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-500 via-teal-400 to-emerald-600" />
 
@@ -29,7 +29,7 @@ export default function HeroSvg() {
         </p>
 
         {/* Clean bottom citation & link */}
-        <div className="pt-3 border-t dark:border-zinc-800/80 border-zinc-100 flex items-center justify-between text-xs font-mono">
+        <div className="pt-3 border-t dark:border-zinc-800/80 border-zinc-100 flex flex-wrap items-center justify-between gap-2 text-xs font-mono">
           <span className="text-zinc-500 dark:text-zinc-400">DJSCE Mumbai · Dept. of IT</span>
           <Link
             href="/projects"

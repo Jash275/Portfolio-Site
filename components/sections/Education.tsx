@@ -4,13 +4,13 @@ import { Slide } from "@/components/shared/Slide";
 
 export default function Education() {
   return (
-    <section className="mt-32">
-      <Slide><div className="mb-16"><h2 className="font-incognito text-4xl mb-4 font-bold tracking-tight">Education</h2></div></Slide>
+    <section className="mt-16 sm:mt-24 lg:mt-32">
+      <Slide><div className="mb-10 sm:mb-16"><h2 className="font-incognito text-3xl sm:text-4xl mb-4 font-bold tracking-tight">Education</h2></div></Slide>
       <div className="grid lg:grid-cols-2 grid-cols-1 gap-x-12 gap-y-10">
           {educationData.map((item, index) => (
             <Slide key={item.id} delay={(index % 2) * 0.06}>
             <div className="education-row min-w-0 flex items-start gap-x-4 max-w-2xl">
-              <div className="education-logo-tile grid place-items-center dark:bg-primary-bg bg-secondary-bg border dark:border-zinc-800 border-zinc-200 min-h-[80px] min-w-[80px] p-2 rounded-md overflow-hidden">
+              <div className="education-logo-tile grid place-items-center dark:bg-primary-bg bg-secondary-bg border dark:border-zinc-800 border-zinc-200 min-h-[68px] min-w-[68px] sm:min-h-[80px] sm:min-w-[80px] p-2 rounded-xl overflow-hidden shrink-0">
                 <Image src={item.logo} className="object-contain duration-300" alt={`${item.institution} logo`} width={56} height={56} />
               </div>
               <div className="min-w-0 flex flex-col items-start break-words">

@@ -71,11 +71,11 @@ export default function MobileMenu() {
           </Link>
 
           <button
-            aria-label="Toggle Menu"
+            aria-label="Close Menu"
             aria-expanded={navShow}
             type="button"
             onClick={onToggleNav}
-            className="mobile-menu-toggle md:hidden dark:bg-primary-bg bg-secondary-bg border dark:border-zinc-800 border-zinc-200 rounded-full p-2"
+            className="mobile-menu-toggle md:hidden min-h-11 min-w-11 grid place-items-center dark:bg-primary-bg bg-secondary-bg border dark:border-zinc-800 border-zinc-200 rounded-full p-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary-color"
           >
             <HiOutlineX className="text-xl" />
           </button>
