@@ -1,61 +1,85 @@
+import Link from "next/link";
+import { BiFile, BiCheckCircle, BiTrendingUp, BiGitBranch } from "react-icons/bi";
+
 export default function HeroSvg() {
   return (
-    <svg
-      viewBox="0 0 1273 906"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className="hero-cubes lg:w-[450px] w-full h-full"
-    >
-      <g>
-        <path
-          className="path"
-          d="M318.587 315.483V510.936L477.544 431.391V236.949M318.587 315.483L159.63 236.949M318.587 315.483L477.544 236.949M318.587 315.483V509.925L159.63 589.469M318.587 315.483L159.63 237.286L0.673828 315.483M318.587 315.483L159.63 394.016M477.544 236.949L318.587 158.753L159.63 236.949M477.544 236.949V432.402M477.544 236.949L318.587 158.416L477.544 80.2192L636.5 158.416L477.544 236.949ZM159.63 236.949V79.5451M159.63 589.469V394.016M159.63 589.469L0.673828 509.925V315.483M0.673828 315.483L159.63 394.016M159.63 79.5451L318.587 1.34863L477.544 79.5451L318.587 158.079L159.63 79.5451ZM795.457 395.701V237.286M795.457 237.286L636.5 159.09L477.544 237.286M795.457 237.286L636.5 315.82M477.544 237.286V431.728L601.139 491.762M477.544 237.286L636.5 315.82M636.5 315.82V472.887M954.414 668.003V473.561M954.414 473.561L795.457 395.364L636.5 473.561L795.457 552.094M954.414 473.561L795.457 552.094M954.414 473.561V669.014M954.414 473.561L795.457 395.027L954.414 316.831L1113.37 395.027L954.414 473.561ZM795.457 552.094L636.5 473.898L477.544 552.094M795.457 552.094L636.5 630.628M477.544 552.094V746.534L636.5 826.078V630.628M477.544 552.094L636.5 630.628M795.457 709.498V904.949M795.457 709.498L636.5 630.965M795.457 709.498L954.414 630.965M795.457 904.949L954.414 825.404V630.965M795.457 904.949L636.5 825.404V630.965M636.5 630.965L795.457 552.768L954.414 630.965M1113.37 552.431V747.882M1113.37 552.431L954.414 473.898M1113.37 552.431L1272.33 473.898M1113.37 747.882L1272.33 668.34V473.898M1113.37 747.882L954.414 668.34V473.898M954.414 473.898L1113.37 395.701L1272.33 473.898"
-          stroke="url(#paint-linear)"
-          strokeOpacity="0.6"
-          strokeWidth="2"
-        />
-      </g>
-      <path
-        d="M154 586C154 583.239 156.239 581 159 581V581C161.761 581 164 583.239 164 586V586C164 588.761 161.761 591 159 591V591C156.239 591 154 588.761 154 586V586Z"
-        fill="#27B173"
-      />
-      <path
-        d="M154 393C154 390.239 156.239 388 159 388V388C161.761 388 164 390.239 164 393V393C164 395.761 161.761 398 159 398V398C156.239 398 154 395.761 154 393V393Z"
-        fill="#27B173"
-      />
-      <path
-        d="M788 551C788 548.239 790.239 546 793 546V546C795.761 546 798 548.239 798 551V551C798 553.761 795.761 556 793 556V556C790.239 556 788 553.761 788 551V551Z"
-        fill="#27B173"
-      />
-      <path
-        d="M1108 551C1108 548.239 1110.24 546 1113 546V546C1115.76 546 1118 548.239 1118 551V551C1118 553.761 1115.76 556 1113 556V556C1110.24 556 1108 553.761 1108 551V551Z"
-        fill="#27B173"
-      />
-      <path
-        d="M1108 398C1108 395.239 1110.24 393 1113 393V393C1115.76 393 1118 395.239 1118 398V398C1118 400.761 1115.76 403 1113 403V403C1110.24 403 1108 400.761 1108 398V398Z"
-        fill="#27B173"
-      />
-      <path
-        d="M788 237C788 234.239 790.239 232 793 232V232C795.761 232 798 234.239 798 237V237C798 239.761 795.761 242 793 242V242C790.239 242 788 239.761 788 237V237Z"
-        fill="#27B173"
-      />
-      <defs>
-        <linearGradient
-          id="paint-linear"
-          x1="1272.23"
-          y1="479.474"
-          x2="506.242"
-          y2="-216.277"
-          gradientUnits="userSpaceOnUse"
+    <div className="hero-feature-card w-full rounded-2xl border dark:border-zinc-800 border-zinc-200 dark:bg-zinc-900/90 bg-white p-6 shadow-sm dark:shadow-zinc-950/50 relative overflow-hidden backdrop-blur-sm">
+      {/* Subtle top accent gradient */}
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-500 via-teal-400 to-emerald-600" />
+      
+      {/* Header telemetry badge */}
+      <div className="flex items-center justify-between gap-2 mb-4 pb-3 border-b dark:border-zinc-800/80 border-zinc-100">
+        <div className="flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider dark:text-zinc-400 text-zinc-500">
+          <BiGitBranch className="h-4 w-4 text-emerald-500" />
+          <span>Research &amp; Systems</span>
+        </div>
+        <span className="inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-medium dark:bg-emerald-950/80 bg-emerald-50 dark:text-emerald-300 text-emerald-700 border dark:border-emerald-800/70 border-emerald-200">
+          <BiCheckCircle className="h-3.5 w-3.5" />
+          ISICVA 2026 Accepted
+        </span>
+      </div>
+
+      {/* Featured Research Card */}
+      <div className="mb-4">
+        <h3 className="font-incognito font-semibold text-lg text-zinc-900 dark:text-zinc-100 mb-1 leading-snug">
+          Hybrid Legal Summarization &amp; RAG Q&amp;A
+        </h3>
+        <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
+          Peer-reviewed research paper on legal text summarization and retrieval-augmented verification accepted at ISICVA 2026.
+        </p>
+      </div>
+
+      {/* Real Audit & Engineering Metrics */}
+      <div className="grid grid-cols-2 gap-2.5 mb-5 font-mono">
+        <div className="rounded-lg p-2.5 dark:bg-zinc-800/60 bg-zinc-50 border dark:border-zinc-800 border-zinc-200/80">
+          <div className="text-[11px] uppercase tracking-wider text-zinc-500 dark:text-zinc-400 flex items-center gap-1">
+            <BiTrendingUp className="text-emerald-500" />
+            <span>IT Audit Testing</span>
+          </div>
+          <div className="mt-1 text-base font-bold text-zinc-900 dark:text-zinc-100">
+            2,398 <span className="text-xs font-normal text-zinc-500">accounts</span>
+          </div>
+          <div className="text-[11px] text-emerald-600 dark:text-emerald-400">
+            44.4% exceptions flagged
+          </div>
+        </div>
+
+        <div className="rounded-lg p-2.5 dark:bg-zinc-800/60 bg-zinc-50 border dark:border-zinc-800 border-zinc-200/80">
+          <div className="text-[11px] uppercase tracking-wider text-zinc-500 dark:text-zinc-400 flex items-center gap-1">
+            <BiFile className="text-emerald-500" />
+            <span>ETL Data Quality</span>
+          </div>
+          <div className="mt-1 text-base font-bold text-zinc-900 dark:text-zinc-100">
+            541k+ <span className="text-xs font-normal text-zinc-500">records</span>
+          </div>
+          <div className="text-[11px] text-zinc-500 dark:text-zinc-400">
+            Automated KPI validation
+          </div>
+        </div>
+      </div>
+
+      {/* Tech Stack Pills */}
+      <div className="flex flex-wrap gap-1.5 mb-5">
+        {["Python", "RAG & GenAI", "Power BI (DAX)", "SQL (CTEs)", "FastAPI", "DevOps"].map((tech) => (
+          <span
+            key={tech}
+            className="rounded px-2 py-0.5 text-[11px] font-mono dark:bg-zinc-800 bg-zinc-100 dark:text-zinc-300 text-zinc-700 border dark:border-zinc-700/50 border-zinc-200"
+          >
+            {tech}
+          </span>
+        ))}
+      </div>
+
+      {/* Direct Project Action */}
+      <div className="pt-3 border-t dark:border-zinc-800/80 border-zinc-100 flex items-center justify-between text-xs">
+        <span className="dark:text-zinc-400 text-zinc-500">DJSCE IT (Honors) · GPA 8.99</span>
+        <Link
+          href="/projects"
+          className="font-medium text-emerald-600 dark:text-emerald-400 hover:underline flex items-center gap-1"
         >
-          <stop stopColor="#27b173" />
-          <stop offset="0.619553" stopColor="#1a663f" />
-          <stop offset="0.93102" stopColor="#26312d" />
-        </linearGradient>
-        <clipPath>
-          <rect width="1273" height="906" fill="white" />
-        </clipPath>
-      </defs>
-    </svg>
+          View 8 Case Studies &rarr;
+        </Link>
+      </div>
+    </div>
   );
 }
